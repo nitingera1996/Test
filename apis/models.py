@@ -1,4 +1,5 @@
 from django.db import models
+from neomodel import StructuredNode, StringProperty, IntegerProperty
 
 class UserDetails(models.Model):
 	userid=models.AutoField(primary_key=True)
@@ -14,3 +15,16 @@ class UserDetails(models.Model):
 
 	def __unicode__(self):
 		return self.fbId
+
+class UserDetailsNode(StructuredNode):
+	print "Class for User Nodes"
+	
+	userId=IntegerProperty(index=True)
+	email=StringProperty(unique_index=True)
+	fbId=StringProperty(unique_index=True)
+	accessToken=StringProperty(unique_index=True)
+	firstName=StringProperty()
+	lastName=StringProperty()
+	gender=StringProperty()
+	locale=StringProperty()
+	fbProfileLink=StringProperty()
