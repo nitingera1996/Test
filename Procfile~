@@ -1,1 +1,0 @@
-web: gunicorn technex_new.wsgi --log-file -

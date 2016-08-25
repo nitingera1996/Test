@@ -2,5 +2,5 @@ venv
 *.pyc
 staticfiles
 .env
-*.sqlite3
+db.sqlite3
 *~
