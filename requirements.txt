@@ -5,3 +5,4 @@ psycopg2==2.6
 SQLAlchemy==1.0.4
 whitenoise==1.0.6
 neomodel==1.0.2
+py2neo==1.6.4

@@ -10,7 +10,7 @@ class UserDetails(models.Model):
 	lastName=models.CharField(max_length=40,null=True)
 	gender=models.CharField(max_length=10)
 	locale=models.CharField(max_length=10,null=True)
-	picLink=models.CharField(max_length=10,null=True)
+	picLink=models.CharField(max_length=100,null=True)
 	fbProfileLink=models.CharField(max_length=100)
 
 	def __unicode__(self):
@@ -20,11 +20,17 @@ class UserDetailsNode(StructuredNode):
 	print "Class for User Nodes"
 	
 	userId=IntegerProperty(index=True)
-	email=StringProperty(unique_index=True)
-	fbId=StringProperty(unique_index=True)
-	accessToken=StringProperty(unique_index=True)
+	email=StringProperty(required = False)
+	fbId=StringProperty(unique_index=True,required=True)
+	accessToken=StringProperty(unique_index=True,required=True)
 	firstName=StringProperty()
 	lastName=StringProperty()
 	gender=StringProperty()
 	locale=StringProperty()
 	fbProfileLink=StringProperty()
+	picLink=StringProperty()
+
+class Counter(StructuredNode):
+
+	counter=IntegerProperty()
+	name=StringProperty(default="counter")
